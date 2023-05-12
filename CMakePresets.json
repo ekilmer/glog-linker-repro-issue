@@ -1,0 +1,42 @@
+{
+  "version": 3,
+  "cmakeMinimumRequired": {
+    "major": 3,
+    "minor": 22,
+    "patch": 0
+  },
+  "configurePresets": [
+    {
+      "name": "default",
+      "description": "Default build using Ninja generator",
+      "generator": "Ninja",
+      "binaryDir": "${sourceDir}/build"
+    }
+  ],
+  "buildPresets": [
+    {
+      "name": "repro-clang-rel",
+      "description": "This fails. Builds Release clang repro against gcc glog",
+      "configurePreset": "default",
+      "targets": ["repro-clang-rel"]
+    },
+    {
+      "name": "repro-clang-dbg",
+      "description": "This passes. Builds Debug clang repro against gcc glog",
+      "configurePreset": "default",
+      "targets": ["repro-clang-dbg"]
+    },
+    {
+      "name": "repro-gcc-rel",
+      "description": "This passes. Builds Release gcc repro against clang glog",
+      "configurePreset": "default",
+      "targets": ["repro-gcc-rel"]
+    },
+    {
+      "name": "repro-gcc-dbg",
+      "description": "This passes. Builds Debug gcc repro against clang glog",
+      "configurePreset": "default",
+      "targets": ["repro-gcc-dbg"]
+    }
+  ]
+}
