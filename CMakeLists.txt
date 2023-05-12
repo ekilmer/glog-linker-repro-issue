@@ -33,6 +33,7 @@ ExternalProject_Add(
   -DBUILD_SHARED_LIBS:BOOL=OFF
   -DCMAKE_INSTALL_PREFIX:PATH=<INSTALL_DIR>
   EXCLUDE_FROM_ALL YES
+  BUILD_ALWAYS YES
   ${console_access}
   CONFIGURE_HANDLED_BY_BUILD YES
 )
@@ -49,6 +50,7 @@ ExternalProject_Add(
   -DCMAKE_BUILD_TYPE:STRING=Release
   -DBUILD_SHARED_LIBS:BOOL=OFF
   -DCMAKE_INSTALL_PREFIX:PATH=<INSTALL_DIR>
+  BUILD_ALWAYS YES
   EXCLUDE_FROM_ALL YES
   ${console_access}
   CONFIGURE_HANDLED_BY_BUILD YES
@@ -67,6 +69,7 @@ ExternalProject_Add(
   -DCMAKE_BUILD_TYPE:STRING=Release
   "-Dglog_DIR:PATH=${glog_gcc_install_dir}/lib/cmake/glog"
   INSTALL_COMMAND ""
+  BUILD_ALWAYS YES
   EXCLUDE_FROM_ALL YES
   DEPENDS glog-gcc
   CONFIGURE_HANDLED_BY_BUILD YES
@@ -83,6 +86,7 @@ ExternalProject_Add(
   -DCMAKE_BUILD_TYPE:STRING=Debug
   "-Dglog_DIR:PATH=${glog_gcc_install_dir}/lib/cmake/glog"
   INSTALL_COMMAND ""
+  BUILD_ALWAYS YES
   EXCLUDE_FROM_ALL YES
   DEPENDS glog-gcc
   CONFIGURE_HANDLED_BY_BUILD YES
@@ -100,6 +104,7 @@ ExternalProject_Add(
   "-Dglog_DIR:PATH=${glog_clang_install_dir}/lib/cmake/glog"
   INSTALL_COMMAND ""
   EXCLUDE_FROM_ALL YES
+  BUILD_ALWAYS YES
   DEPENDS glog-clang
   CONFIGURE_HANDLED_BY_BUILD YES
 )
@@ -116,6 +121,7 @@ ExternalProject_Add(
   "-Dglog_DIR:PATH=${glog_clang_install_dir}/lib/cmake/glog"
   INSTALL_COMMAND ""
   EXCLUDE_FROM_ALL YES
+  BUILD_ALWAYS YES
   DEPENDS glog-clang
   CONFIGURE_HANDLED_BY_BUILD YES
 )
